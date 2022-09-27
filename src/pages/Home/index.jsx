@@ -46,7 +46,7 @@ export function Home() {
                 <h1 className={styles.titleCoffee}>Nossos cafés</h1>
                 <div className={styles.coffeeList}>
                     {coffees.map(coffee => {
-                        return <CoffeeCard key={coffee} data={coffee} />
+                        return <CoffeeCard key={coffee.id} data={coffee} />
                     })}
                 </div>
             </section>
