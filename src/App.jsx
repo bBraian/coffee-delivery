@@ -1,15 +1,18 @@
 import { Header } from "./components/Header"
 import { Checkout } from "./pages/Checkout"
 import { Home } from "./pages/Home"
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from './Router';
 
 function App() {
 
   return (
-    <div>
-      <Header />
+    <BrowserRouter>
+      <Router />
+      {/* <Header /> */}
       {/* <Home /> */}
-      <Checkout />
-    </div>
+      {/* <Checkout /> */}
+    </BrowserRouter>
   )
 }
 

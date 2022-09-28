@@ -1,9 +1,9 @@
-import styles from './CoffeeItemCard.module.css'
+import styles from './styles.module.css'
 import { Trash } from 'phosphor-react';
 
-import { CounterButton } from '../../../components/CounterButton';
+import { CounterButton } from '../../../../components/CounterButton';
 
-import img from '../../../data/assets/Type=Americano.png';
+import img from '../../../../data/assets/Type=Americano.png';
 
 export function CoffeeItemCard() {
     return (

@@ -1,7 +1,6 @@
-import styles from './TitleForm.module.css';
+import styles from './styles.module.css';
 
 export function TitleForm(props) {
-    console.log(props)
     return (
         <div className={styles.rowSubTitle}>
             <div>

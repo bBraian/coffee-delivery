@@ -110,3 +110,33 @@
     flex-direction: column;
 }
 
+.totalBox {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.totalBox div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.42rem 0;
+}
+
+.totalBox div:last-child {
+    margin-bottom: 0;
+}
+
+.confirm {
+    background-color: var(--yellow);
+    border: 0;
+    color: var(--white);
+    height: 2.875rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.confirm:hover {
+    background-color: var(--yellow-dark);
+}
