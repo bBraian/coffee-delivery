@@ -1,5 +1,6 @@
 import styles from './styles.module.css';
-import { MapPinLine } from 'phosphor-react';
+import { MapPinLine, CurrencyDollar, CreditCard, Money, Bank } from 'phosphor-react';
+import { TitleForm } from '../../components/TitleForm';
 
 export function Checkout() {
     return (
@@ -9,15 +10,11 @@ export function Checkout() {
                 <h1 className={styles.title}>Complete seu pedido</h1>
                 <div className={styles.completeBox}>
 
-                    <div className={styles.rowSubTitle}>
-                        <div>
-                            <MapPinLine size={22} color='#C47F17' />
-                        </div>
-                        <div className={styles.iconTitle}>
-                            <h2 className={styles.addresTitle}>Endereço de Entrega</h2>
-                            <span className={styles.addresSubTitle}>Informe o endereço onde deseja receber seu pedido</span>
-                        </div>
-                    </div>
+                    <TitleForm 
+                        title="Endereço de Entrega"
+                        subtitle="Informe o endereço onde deseja receber seu pedido"
+                        icon={<MapPinLine size={22} color='#C47F17' />}
+                    />
 
                     <form action="">
                         <input type="text" placeholder='CEP' className={`${styles.cepInput} ${styles.defaultInput}`} />
@@ -35,7 +32,25 @@ export function Checkout() {
 
                 </div>
                 <div className={styles.completeBox}>
-                    
+                    <TitleForm 
+                        title="Pagamento"
+                        subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
+                        icon={<CurrencyDollar size={22} color='#8047F8' />}
+                    />
+                    <div className={styles.payment}>
+                        <button>
+                            <CreditCard size={16} color='#8047F8'  />
+                            <span>CARTÃO DE CRÉDITO</span>
+                        </button>
+                        <button>
+                            <Money size={16} color='#8047F8'  />
+                            <span>CARTÃO DE DÉBITO</span>
+                        </button>
+                        <button>
+                            <Bank size={16} color='#8047F8'  />
+                            <span>DINHEIRO</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
