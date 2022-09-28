@@ -1,5 +1,4 @@
-import styles from './styles.module.css';
-import { MapPinLine } from 'phosphor-react';
+import styles from './TitleForm.module.css';
 
 export function TitleForm(props) {
     console.log(props)

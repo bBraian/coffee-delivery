@@ -1,6 +1,5 @@
 .counter {
     width: 4.5rem;
-    height: 2.375rem;
     background-color: var(--base-button);
     border-radius: 6px;
     display: flex;

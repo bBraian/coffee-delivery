@@ -1,8 +1,11 @@
 import styles from './styles.module.css';
 import { MapPinLine, CurrencyDollar, CreditCard, Money, Bank } from 'phosphor-react';
-import { TitleForm } from '../../components/TitleForm';
+import { TitleForm } from './components/TitleForm';
+import { CoffeeItemCard } from './components/CoffeeItemCard';
+import { useState } from 'react';
 
 export function Checkout() {
+    const [paymentMethod, setPaymentMethod] = useState('0');
     return (
         <div className={styles.container}>
 
@@ -38,15 +41,15 @@ export function Checkout() {
                         icon={<CurrencyDollar size={22} color='#8047F8' />}
                     />
                     <div className={styles.payment}>
-                        <button>
+                        <button onClick={() => setPaymentMethod('1')} className={paymentMethod == '1' ? styles.selected : ''} >
                             <CreditCard size={16} color='#8047F8'  />
                             <span>CARTÃO DE CRÉDITO</span>
                         </button>
-                        <button>
+                        <button onClick={() => setPaymentMethod('2')} className={paymentMethod == '2' ? styles.selected : ''} >
                             <Money size={16} color='#8047F8'  />
                             <span>CARTÃO DE DÉBITO</span>
                         </button>
-                        <button>
+                        <button onClick={() => setPaymentMethod('3')} className={paymentMethod == '3' ? styles.selected : ''} >
                             <Bank size={16} color='#8047F8'  />
                             <span>DINHEIRO</span>
                         </button>
@@ -57,8 +60,7 @@ export function Checkout() {
             <div>
                 <h1 className={styles.title}>Cafés selecionados</h1>
                 <div className={styles.selectedCoffeesBox}>
-                    <h1>oi</h1>
-                    <br />
+                    <CoffeeItemCard />
                 </div>
             </div>
         </div>

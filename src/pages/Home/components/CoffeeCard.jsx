@@ -22,7 +22,7 @@ export function CoffeeCard({data}) {
             <div className={styles.cartRow}>
                 <span>R$ <b>{data.price}</b></span>
                 <div className={styles.cartButtons}>
-                    <CounterButton />
+                    <CounterButton height='2.375rem' />
                     <button className={styles.cartButton}><ShoppingCart weight='fill' size={20} /></button>
                 </div>
 
