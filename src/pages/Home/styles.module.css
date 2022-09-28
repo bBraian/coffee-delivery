@@ -129,5 +129,6 @@
 .coffeeList {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2.5rem 2rem;
+    gap: 3rem 2rem;
+    margin-bottom: 8rem;
 }

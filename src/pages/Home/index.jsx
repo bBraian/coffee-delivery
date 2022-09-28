@@ -1,8 +1,10 @@
+import { Item } from './components/Item';
+import { CoffeeCard } from './components/CoffeeCard';
+
 import styles from './styles.module.css';
 import bannerCoffee from '../../assets/bannerCoffee.png';
-import { Item } from './components/Item';
 import bannerBg from '../../assets/bannerBg.png';
-import { CoffeeCard } from './components/CoffeeCard';
+
 import { coffees } from '../../data/coffees';
 
 export function Home() {

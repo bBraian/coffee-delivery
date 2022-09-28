@@ -33,6 +33,13 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid transparent;
+    transition: border 0.2s;
+    cursor: pointer;
+}
+
+.locationButton:hover {
+    border: 1px solid var(--purple);
 }
 
 .location-button span {
@@ -49,4 +56,11 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid transparent;
+    transition: border 0.2s;
+    cursor: pointer;
+}
+
+.cartButton:hover {
+    border: 1px solid var(--yellow);
 }

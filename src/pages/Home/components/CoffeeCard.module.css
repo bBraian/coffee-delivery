@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .container img {
@@ -14,6 +15,15 @@
     margin-top: -1.5rem;
 }
 
+.tagContainer {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
 .tag {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -21,7 +31,6 @@
     background-color: var(--yellow-light);
     color: var(--yellow-dark);
     border-radius: 12px;
-    margin-top: 0.75rem;
     font-size: 0.625;
     line-height: 130%;
 }
@@ -78,42 +87,6 @@
 .cartButtons {
     display: flex;
     gap: 0.375rem;
-}
-
-.counter {
-    width: 4.5rem;
-    height: 2.375rem;
-    background-color: var(--base-button);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-}
-
-.counterValue {
-    color: var(--base-title);
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    line-height: 130%;
-    width: 1.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.minus, .plus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border: 0;
-    background-color: transparent;
-    color: var(--purple);
-}
-
-.minus:hover, .plus:hover {
-    color: var(--purple-dark);
 }
 
 .cartButton {
