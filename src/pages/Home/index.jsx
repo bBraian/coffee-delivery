@@ -10,7 +10,6 @@ import { coffees } from '../../data/coffees';
 export function Home() {
     return (
         <div className={styles.home}>
-
             <section className={styles.landingSection}>
                 <img className={styles.bannerBackground} src={bannerBg} alt="" />
                 <div className={styles.textSide}>

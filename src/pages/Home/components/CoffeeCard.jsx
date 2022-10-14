@@ -1,17 +1,19 @@
 import styles from './CoffeeCard.module.css';
 import { ShoppingCart} from 'phosphor-react';
 import { CounterButton } from '../../../components/CounterButton';
+import { useContext } from 'react';
+import { CartContext } from '../../../context/CartContext';
 
 export function CoffeeCard({data}) {
-    console.log(data)
+    const { addToCart, cart } = useContext(CartContext);
     return (
         <div className={styles.container}>
             <img src={data.image} alt="" />
 
             <div className={styles.tagContainer}>
-            {data.tag.map(tagg => {
+            {data.tag.map((tagg, index) => {
                 return (
-                    <span className={styles.tag}>{tagg.name}</span>
+                    <span key={index} className={styles.tag}>{tagg.name}</span>
                     )
                 })}
             </div>
@@ -23,7 +25,9 @@ export function CoffeeCard({data}) {
                 <span>R$ <b>{data.price}</b></span>
                 <div className={styles.cartButtons}>
                     <CounterButton height='2.375rem' />
-                    <button className={styles.cartButton}><ShoppingCart weight='fill' size={20} /></button>
+                    <button className={styles.cartButton} onClick={() => addToCart(data)}>
+                        <ShoppingCart weight='fill' size={20} />
+                    </button>
                 </div>
 
             </div>
