@@ -3,15 +3,13 @@ import { Trash } from 'phosphor-react';
 
 import { CounterButton } from '../../../../components/CounterButton';
 
-import img from '../../../../data/assets/Type=Americano.png';
-
-export function CoffeeItemCard() {
+export function CoffeeItemCard({ data }) {
     return (
         <div className={styles.container}>
             <div className={styles.imageInfos}>
-                <img src={img} alt="" />
+                <img src={data.image} alt="" />
                 <div className={styles.nameButtons}>
-                    <h1 className={styles.name}>Expresso Tradicional</h1>
+                    <h1 className={styles.name}>{data.name}</h1>
                     <div className={styles.buttons}>
                         <CounterButton height='2rem' />
                         <button className={styles.removeButton}>
@@ -21,7 +19,7 @@ export function CoffeeItemCard() {
                     </div>
                 </div>
             </div>
-            <span className={styles.price}>R$ 9,90</span>
+            <span className={styles.price}>R$ {data.price}</span>
         </div>
     )
 }

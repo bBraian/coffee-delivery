@@ -2,10 +2,26 @@ import styles from './styles.module.css';
 import { MapPinLine, CurrencyDollar, CreditCard, Money, Bank } from 'phosphor-react';
 import { TitleForm } from './components/TitleForm';
 import { CoffeeItemCard } from './components/CoffeeItemCard';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 export function Checkout() {
     const [paymentMethod, setPaymentMethod] = useState('0');
+    const { cart } = useContext(CartContext);
+    const [total, setTotal] = useState('0');
+    const [coffeesPrice, setCoffeesPrice] = useState('0');
+    const delivery = 3.50;
+
+    useEffect(() => {
+        let sum = 0;
+        cart.forEach(coffee => {
+            sum += parseFloat(coffee.price);
+        })
+        setCoffeesPrice(sum.toFixed(2).replace('.', ','));
+        sum += parseFloat(delivery);
+        setTotal(sum.toFixed(2).replace('.',','));
+    }, [cart])
+    console.log(cart)
     return (
         <div className={styles.container}>
 
@@ -60,23 +76,24 @@ export function Checkout() {
             <div>
                 <h1 className={styles.title}>Cafés selecionados</h1>
                 <div className={styles.selectedCoffeesBox}>
-                    <CoffeeItemCard />
-                    <CoffeeItemCard />
+                    {cart.map((coffee, index) => {
+                        return <CoffeeItemCard key={index} data={coffee} />
+                    })}
 
                     <div className={styles.totalBox}>
                         <div>
                             <span>Total de itens</span>
-                            <span>R$ 29,70</span>
+                            <span>R$ {coffeesPrice}</span>
                         </div>
 
                         <div>
                             <span>Entrega</span>
-                            <span>R$ 3,50</span>
+                            <span>R$ {delivery.toFixed(2).replace('.', ',')}</span>
                         </div>
 
                         <div>
                             <span>Total</span>
-                            <span>R$ 33,20</span>
+                            <span>R$ {total}</span>
                         </div>
                     </div>
 
