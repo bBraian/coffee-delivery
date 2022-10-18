@@ -12,7 +12,7 @@ export function CartContextProvider({children}) {
 
     return (
         <CartContext.Provider
-            value={{cart, setCart, addToCart, coffeeAmount, setCoffeeAmount}}
+            value={{cart, setCart, addToCart }}
         >
             {children}
         </CartContext.Provider>

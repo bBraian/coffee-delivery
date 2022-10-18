@@ -1,19 +1,17 @@
 import styles from './styles.module.css';
 import { Minus, Plus } from 'phosphor-react';
-import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 export function CounterButton(props) {
-    const { setCoffeeAmount } = useContext(CartContext);
 
     function handleMinusCoffee() {
         if(props.amount > 1) {
-            setCoffeeAmount(props.amount-1);
+            props.setCoffeeAmount(props.amount-1);
         }
     }
 
     function handleAddCoffee() {
-        setCoffeeAmount(props.amount+1);
+        props.setCoffeeAmount(props.amount+1);
     }
 
     return (

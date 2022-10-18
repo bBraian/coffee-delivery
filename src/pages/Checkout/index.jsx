@@ -21,7 +21,6 @@ export function Checkout() {
         sum += parseFloat(delivery);
         setTotal(sum.toFixed(2).replace('.',','));
     }, [cart])
-    console.log(cart)
     return (
         <div className={styles.container}>
 
