@@ -1,6 +1,5 @@
 import styles from './styles.module.css';
 import { Minus, Plus } from 'phosphor-react';
-import { CartContext } from '../../context/CartContext';
 
 export function CounterButton(props) {
 

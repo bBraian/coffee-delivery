@@ -1,5 +1,5 @@
 import { ShoppingCart, Timer, Package, Coffee } from 'phosphor-react';
-import styles from './Item.module.css';
+import styles from './styles.module.css';
 
 export function Item({text, color, icon}) {
     let ICON = ''

@@ -28,7 +28,4 @@ export const coffees = [
     {id: 12, name: 'Havaiano', description: 'Bebida adocicada preparada com café e leite de coco', tag: [{name:'ESPECIAL'}], price: '9.90', image: havaiano},
     {id: 13, name: 'Árabe', description: 'Bebida preparada com grãos de café árabe e especiarias', tag: [{name:'ESPECIAL'}], price: '9.90', image: arabe},
     {id: 14, name: 'Irlandês', description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly', tag: [{name:'ESPECIAL'}, {name: 'ALCOÓLICO'}], price: '9.90', image: irlandes},
-
-
-    
 ]

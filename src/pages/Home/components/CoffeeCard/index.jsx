@@ -1,11 +1,11 @@
-import styles from './CoffeeCard.module.css';
+import styles from './styles.module.css';
 import { ShoppingCart} from 'phosphor-react';
 import { CounterButton } from '../../../../components/CounterButton';
 import { useContext, useState } from 'react';
 import { CartContext } from '../../../../context/CartContext';
 
 export function CoffeeCard({data}) {
-    const { addToCart, cart } = useContext(CartContext);
+    const { addToCart } = useContext(CartContext);
     const [coffeeAmount, setCoffeeAmount] = useState(1)
     return (
         <div className={styles.container}>
@@ -26,7 +26,7 @@ export function CoffeeCard({data}) {
                 <span>R$ <b>{data.price}</b></span>
                 <div className={styles.cartButtons}>
                     <CounterButton height='2.375rem' amount={coffeeAmount} setCoffeeAmount={setCoffeeAmount} />
-                    <button className={styles.cartButton} onClick={() => addToCart(data)}>
+                    <button className={styles.cartButton} onClick={() => addToCart(data, coffeeAmount)}>
                         <ShoppingCart weight='fill' size={20} />
                     </button>
                 </div>
