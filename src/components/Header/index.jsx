@@ -6,8 +6,7 @@ import { CartContext } from '../../context/CartContext';
 import { useContext } from 'react';
 
 export function Header() {
-    const { cart, setCart } = useContext(CartContext);
-    console.log(cart.length);
+    const { cart } = useContext(CartContext);
     return (
         <header>
                 <NavLink to='/'>
@@ -19,7 +18,7 @@ export function Header() {
                         <MapPin size={22} weight='fill' />
                         <span>Porto Alegre, RS</span>
                     </button>
-                    <NavLink className={styles.cartButton} to='/checkout'>
+                    <NavLink className={styles.cartButton} isActive={false} to='/checkout'>
                         {cart.length != 0 ? <div className={styles.counter}>{cart.length}</div> : ""}
                         <ShoppingCart size={22} weight='fill' />
                     </NavLink>
