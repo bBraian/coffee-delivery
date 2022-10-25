@@ -3,10 +3,20 @@ import headerLogo from '../../assets/header-logo.svg';
 import { MapPin, ShoppingCart } from 'phosphor-react';
 import { NavLink } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 export function Header() {
     const { cart } = useContext(CartContext);
+    const [cartAmount, setAmountCart] = useState(0);
+
+    useEffect(() => {
+        let amount = 0;
+        for(let i = 0; i < cart.length; i++) {
+            amount = cart[i].amount + amount;
+        }
+        setAmountCart(amount);
+    }, [cart])
+
     return (
         <header>
                 <NavLink to='/'>
@@ -18,8 +28,8 @@ export function Header() {
                         <MapPin size={22} weight='fill' />
                         <span>Porto Alegre, RS</span>
                     </button>
-                    <NavLink className={styles.cartButton} isActive={false} to='/checkout'>
-                        {cart.length != 0 ? <div className={styles.counter}>{cart.length}</div> : ""}
+                    <NavLink className={styles.cartButton} to='/checkout'>
+                        {cart.length != 0 ? <div className={styles.counter}>{cartAmount}</div> : ""}
                         <ShoppingCart size={22} weight='fill' />
                     </NavLink>
                 </div>

@@ -10,6 +10,7 @@ export function Checkout() {
     const { cart } = useContext(CartContext);
     const [total, setTotal] = useState('0');
     const [coffeesPrice, setCoffeesPrice] = useState('0');
+    const [coffees, setCoffees] = useState([])
     const delivery = 3.50;
 
     useEffect(() => {
