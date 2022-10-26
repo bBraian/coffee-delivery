@@ -2,10 +2,6 @@
     .removeButton span {
         display: none !important;
     }
-    .imageInfos img {
-        width: 3rem !important;
-        height: 3rem !important;
-    }
 }
 
 .container {
@@ -81,4 +77,5 @@
     font-weight: bold;
     line-height: 130%;
     text-align: center;
+    white-space: nowrap;
 }

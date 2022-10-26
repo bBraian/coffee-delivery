@@ -15,7 +15,6 @@ export function CartContextProvider({children}) {
         var cartList = [...cart];
         cartList.splice(index, 1);
         setCart(cartList)
-
     }
 
     return (
