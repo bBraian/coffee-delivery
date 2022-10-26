@@ -25,7 +25,7 @@ export function Checkout() {
     return (
         <div className={styles.container}>
 
-            <div>
+            <div className={styles.formComplete}>
                 <h1 className={styles.title}>Complete seu pedido</h1>
                 <div className={styles.completeBox}>
 
@@ -43,9 +43,11 @@ export function Checkout() {
                             <input type="text" placeholder='Complemento' className={`${styles.complementInput} ${styles.defaultInput}`} />
                         </div>
                         <div className={styles.formRow}>
-                            <input type="text" placeholder='Bairro' className={`${styles.bairroInput} ${styles.defaultInput}`} />
                             <input type="text" placeholder='Cidade' className={`${styles.cityInput} ${styles.defaultInput}`} />
-                            <input type="text" placeholder='UF' className={`${styles.ufInput} ${styles.defaultInput}`} />
+                            <div className={styles.formRowMobile}>
+                                <input type="text" placeholder='Bairro' className={`${styles.bairroInput} ${styles.defaultInput}`} />
+                                <input type="text" placeholder='UF' className={`${styles.ufInput} ${styles.defaultInput}`} />
+                            </div>
                         </div>
                     </form>
 

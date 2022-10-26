@@ -7,6 +7,11 @@ import { CartContext } from '../../../../context/CartContext';
 export function CoffeeCard({data}) {
     const { addToCart } = useContext(CartContext);
     const [coffeeAmount, setCoffeeAmount] = useState(1)
+
+    function handleAddToCart(data) {
+        addToCart(data, coffeeAmount)
+        setCoffeeAmount(1);
+    }
     return (
         <div className={styles.container}>
             <img src={data.image} alt="" />
@@ -26,7 +31,7 @@ export function CoffeeCard({data}) {
                 <span>R$ <b>{data.price}</b></span>
                 <div className={styles.cartButtons}>
                     <CounterButton height='2.375rem' amount={coffeeAmount} setCoffeeAmount={setCoffeeAmount} />
-                    <button className={styles.cartButton} onClick={() => addToCart(data, coffeeAmount)}>
+                    <button className={styles.cartButton} onClick={() => handleAddToCart(data)}>
                         <ShoppingCart weight='fill' size={20} />
                     </button>
                 </div>

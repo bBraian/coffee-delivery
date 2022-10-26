@@ -1,3 +1,13 @@
+@media (max-width: 768px) {
+    .removeButton span {
+        display: none !important;
+    }
+    .imageInfos img {
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -70,5 +80,5 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     line-height: 130%;
-
+    text-align: center;
 }

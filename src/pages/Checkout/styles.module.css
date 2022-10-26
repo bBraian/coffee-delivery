@@ -1,15 +1,47 @@
 @media (max-width: 1386px) {
     .container {
         grid-template-columns: 1fr !important;
+        padding: 0 8rem !important;
     }
 }
 
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr !important;
+        padding: 0 2rem !important;
+        padding-bottom: 2rem !important;
+        margin-top: 8rem !important;
+    }
+
+    .completeBox {
+        padding: 2.3rem !important;
+        flex-direction: column;
+    }
+
+    .cepInput, .numberInput, .bairroInput, .teste {
+        width: 100% !important;
+    }
+    .complementInput, .cityInput {
+        width: 100% !important;
+    }
+    .formRow {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    .payment {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+
+}
 .container {
     width: 100%;
     padding: 0 10rem;
     max-width: 1440px;
     margin: 0 auto;
-    margin-top: 2.5rem;
     display: grid;
     grid-template-columns: 1.75fr 1.25fr;
     gap: 2rem;
@@ -25,6 +57,11 @@
 }
 
 .formRow {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.formRowMobile {
     display: flex;
     gap: 0.75rem;
 }
