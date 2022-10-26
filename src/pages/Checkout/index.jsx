@@ -79,7 +79,7 @@ export function Checkout() {
                 <h1 className={styles.title}>Cafés selecionados</h1>
                 <div className={styles.selectedCoffeesBox}>
                     {cart.map((coffee, index) => {
-                        return <CoffeeItemCard key={index} data={coffee} />
+                        return <CoffeeItemCard key={coffee.name+index} data={coffee} />
                     })}
 
                     <div className={styles.totalBox}>

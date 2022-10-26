@@ -10,9 +10,17 @@ export function CartContextProvider({children}) {
         setCart(state => [...state, data]);
     }
 
+    function removeCoffee(coffeeId) {
+        var index = cart.findIndex(x => x.id === coffeeId);
+        var cartList = [...cart];
+        cartList.splice(index, 1);
+        setCart(cartList)
+
+    }
+
     return (
         <CartContext.Provider
-            value={{cart, setCart, addToCart }}
+            value={{cart, setCart, addToCart, removeCoffee }}
         >
             {children}
         </CartContext.Provider>
