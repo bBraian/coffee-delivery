@@ -1,6 +1,7 @@
 @media (max-width: 768px) {
     header {
         padding: 0 1rem !important;
+        height: 5.5rem !important;
     }
 }
 
