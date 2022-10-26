@@ -10,13 +10,13 @@ export function Checkout() {
     const { cart } = useContext(CartContext);
     const [total, setTotal] = useState('0');
     const [coffeesPrice, setCoffeesPrice] = useState('0');
-    const [coffees, setCoffees] = useState([])
     const delivery = 3.50;
 
     useEffect(() => {
         let sum = 0;
         cart.forEach(coffee => {
-            sum += parseFloat(coffee.price);
+            let coffeePrice = coffee.price * coffee.amount;
+            sum += parseFloat(coffeePrice);
         })
         setCoffeesPrice(sum.toFixed(2).replace('.', ','));
         sum += parseFloat(delivery);
