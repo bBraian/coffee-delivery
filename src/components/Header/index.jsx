@@ -28,7 +28,7 @@ export function Header() {
                         <MapPin size={22} weight='fill' />
                         <span>Porto Alegre, RS</span>
                     </button>
-                    <NavLink className={styles.cartButton} to='/checkout'>
+                    <NavLink className={styles.cartButton} to={cart.length > 0 ? '/checkout' : '#'}>
                         {cart.length != 0 ? <div className={styles.counter}>{cartAmount}</div> : ""}
                         <ShoppingCart size={22} weight='fill' />
                     </NavLink>
