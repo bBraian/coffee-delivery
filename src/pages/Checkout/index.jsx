@@ -4,9 +4,13 @@ import { TitleForm } from './components/TitleForm';
 import { CoffeeItemCard } from './components/CoffeeItemCard';
 import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 export function Checkout() {
-    const [paymentMethod, setPaymentMethod] = useState('0');
+    const [paymentMethod, setPaymentMethod] = useState('');
+    const [street, setStreet] = useState('');
+    const [bairro, setBairro] = useState('');
+    const [number, setNumber] = useState('');
     const { cart } = useContext(CartContext);
     const [total, setTotal] = useState('0');
     const [coffeesPrice, setCoffeesPrice] = useState('0');
@@ -36,17 +40,17 @@ export function Checkout() {
                     />
 
                     <form action="">
-                        <input type="text" placeholder='CEP' className={`${styles.cepInput} ${styles.defaultInput}`} />
-                        <input type="text" placeholder='Rua' className={`${styles.teste} ${styles.defaultInput}`} />
+                        <input type="text" placeholder='CEP' required className={`${styles.cepInput} ${styles.defaultInput}`} />
+                        <input type="text" placeholder='Rua' required className={`${styles.teste} ${styles.defaultInput}`} onChange={(e) => {setStreet(e.target.value)}} value={street} />
                         <div className={styles.formRow}>
-                            <input type="text" placeholder='Número' className={`${styles.numberInput} ${styles.defaultInput}`} />
+                            <input type="text" placeholder='Número' required className={`${styles.numberInput} ${styles.defaultInput}`} onChange={(e) => {setNumber(e.target.value)}} value={number} />
                             <input type="text" placeholder='Complemento' className={`${styles.complementInput} ${styles.defaultInput}`} />
                         </div>
                         <div className={styles.formRow}>
-                            <input type="text" placeholder='Cidade' className={`${styles.cityInput} ${styles.defaultInput}`} />
+                            <input type="text" placeholder='Cidade' disabled value="Porto Alegre" className={`${styles.cityInput} ${styles.defaultInput}`} />
                             <div className={styles.formRowMobile}>
-                                <input type="text" placeholder='Bairro' className={`${styles.bairroInput} ${styles.defaultInput}`} />
-                                <input type="text" placeholder='UF' className={`${styles.ufInput} ${styles.defaultInput}`} />
+                                <input type="text" placeholder='Bairro' required className={`${styles.bairroInput} ${styles.defaultInput}`} onChange={(e) => {setBairro(e.target.value)}} value={bairro} />
+                                <input type="text" placeholder='UF' value="RS" disabled className={`${styles.ufInput} ${styles.defaultInput}`} />
                             </div>
                         </div>
                     </form>
@@ -59,15 +63,15 @@ export function Checkout() {
                         icon={<CurrencyDollar size={22} color='#8047F8' />}
                     />
                     <div className={styles.payment}>
-                        <button onClick={() => setPaymentMethod('1')} className={paymentMethod == '1' ? styles.selected : ''} >
+                        <button onClick={() => setPaymentMethod('CARTÃO DE CRÉDITO')} className={paymentMethod == 'CARTÃO DE CRÉDITO' ? styles.selected : ''} >
                             <CreditCard size={16} color='#8047F8'  />
                             <span>CARTÃO DE CRÉDITO</span>
                         </button>
-                        <button onClick={() => setPaymentMethod('2')} className={paymentMethod == '2' ? styles.selected : ''} >
+                        <button onClick={() => setPaymentMethod('CARTÃO DE DÉBITO')} className={paymentMethod == 'CARTÃO DE DÉBITO' ? styles.selected : ''} >
                             <Money size={16} color='#8047F8'  />
                             <span>CARTÃO DE DÉBITO</span>
                         </button>
-                        <button onClick={() => setPaymentMethod('3')} className={paymentMethod == '3' ? styles.selected : ''} >
+                        <button onClick={() => setPaymentMethod('DINHEIRO')} className={paymentMethod == 'DINHEIRO' ? styles.selected : ''} >
                             <Bank size={16} color='#8047F8'  />
                             <span>DINHEIRO</span>
                         </button>
@@ -84,22 +88,22 @@ export function Checkout() {
 
                     <div className={styles.totalBox}>
                         <div>
-                            <span>Total de itens</span>
-                            <span>R$ {coffeesPrice}</span>
+                            <span className={styles.textS}>Total de itens</span>
+                            <span className={styles.textM}>R$ {coffeesPrice}</span>
                         </div>
 
                         <div>
-                            <span>Entrega</span>
-                            <span>R$ {delivery.toFixed(2).replace('.', ',')}</span>
+                            <span className={styles.textS}>Entrega</span>
+                            <span className={styles.textM}>R$ {delivery.toFixed(2).replace('.', ',')}</span>
                         </div>
 
                         <div>
-                            <span>Total</span>
-                            <span>R$ {total}</span>
+                            <span className={styles.textBoldL}>Total</span>
+                            <span className={styles.textBoldL}>R$ {total}</span>
                         </div>
                     </div>
 
-                    <button className={styles.confirm}>CONFIRMAR PEDIDO</button>
+                    <Link className={styles.confirm} to='/success' state={{ "street": street, "bairro": bairro, "number": number  }}>CONFIRMAR PEDIDO</Link>
 
                 </div>
             </div>

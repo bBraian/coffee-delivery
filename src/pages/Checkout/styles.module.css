@@ -184,8 +184,36 @@
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .confirm:hover {
     background-color: var(--yellow-dark);
+}
+
+.textS {
+    color: var(--base-text);
+    font-size: 0.875rem;
+    line-height: 130%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.textM {
+    color: var(--base-text);
+    font-size: 1rem;
+    line-height: 130%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.textBoldL {
+    color: var(--base-text);
+    font-size: 1.25rem;
+    line-height: 130%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }

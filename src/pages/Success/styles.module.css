@@ -31,6 +31,10 @@
     position: relative;
     padding: 2.5rem;
     flex: 1;
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
 }
 
 .box::before {
@@ -45,4 +49,25 @@
     background: linear-gradient(45deg,#DBAC2C, #8047F8) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: 'Baloo 2', cursive;
+    line-height: 130%;
+    color: #C47F17;
+}
+
+.text {
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    line-height: 130%;
+    color: var(--base-text);
+}
+
+.image {
+    flex: 1;
+    height: auto
 }

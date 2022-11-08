@@ -15,12 +15,6 @@
     align-items: center;
 }
 
-.text {
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-}
-
 .flexColumn {
     display: flex;
     flex-direction: column;
@@ -34,4 +28,7 @@
     font-size: 1rem;
     line-height: 130%;
     color: var(--base-text);
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }

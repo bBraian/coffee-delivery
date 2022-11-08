@@ -30,7 +30,7 @@ export function CoffeeItemCard({ data }) {
                     </div>
                 </div>
             </div>
-            <span className={styles.price}>R$ {data.price}</span>
+            <span className={styles.price}>R$ {data.price.replace('.', ',')}</span>
         </div>
     )
 }
