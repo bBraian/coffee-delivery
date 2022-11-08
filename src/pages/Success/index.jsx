@@ -11,6 +11,20 @@ export function Succeess() {
 
     const location = useLocation()
     const { street, bairro, number, paymentMethod } = location.state;
+    let payment = '';
+
+    switch (paymentMethod) {
+        case 1: 
+            payment = 'Cartão de Crédito'
+            break;
+        case 2: 
+            payment = 'Cartão de Débito'
+            break;
+        case 3: 
+            payment = 'Dinheiro'
+            break;
+            
+    }
 
     useEffect(() => {
         setCart([]);
@@ -24,7 +38,7 @@ export function Succeess() {
                 <div className={styles.box}>
                     <Item title={street + ', ' + number} subtitle={bairro} icon="delivery" />
                     <Item subtitle="20 min - 30 min" icon="timer" />
-                    <Item subtitle={paymentMethod} icon="money" />
+                    <Item subtitle={payment} icon="money" />
                 </div>
 
                 <img src={delivery} alt="Figura ilustrativa do entregador em cima da moto indo entregar seu pedido" className={styles.image} />

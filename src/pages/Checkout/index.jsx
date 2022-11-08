@@ -7,7 +7,7 @@ import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 
 export function Checkout() {
-    const [paymentMethod, setPaymentMethod] = useState('');
+    const [paymentMethod, setPaymentMethod] = useState(0);
     const [street, setStreet] = useState('');
     const [bairro, setBairro] = useState('');
     const [number, setNumber] = useState('');
@@ -63,15 +63,15 @@ export function Checkout() {
                         icon={<CurrencyDollar size={22} color='#8047F8' />}
                     />
                     <div className={styles.payment}>
-                        <button onClick={() => setPaymentMethod('CARTÃO DE CRÉDITO')} className={paymentMethod == 'CARTÃO DE CRÉDITO' ? styles.selected : ''} >
+                        <button onClick={() => setPaymentMethod(1)} className={paymentMethod == 1 ? styles.selected : ''} >
                             <CreditCard size={16} color='#8047F8'  />
                             <span>CARTÃO DE CRÉDITO</span>
                         </button>
-                        <button onClick={() => setPaymentMethod('CARTÃO DE DÉBITO')} className={paymentMethod == 'CARTÃO DE DÉBITO' ? styles.selected : ''} >
+                        <button onClick={() => setPaymentMethod(2)} className={paymentMethod == 2 ? styles.selected : ''} >
                             <Money size={16} color='#8047F8'  />
                             <span>CARTÃO DE DÉBITO</span>
                         </button>
-                        <button onClick={() => setPaymentMethod('DINHEIRO')} className={paymentMethod == 'DINHEIRO' ? styles.selected : ''} >
+                        <button onClick={() => setPaymentMethod(3)} className={paymentMethod == 3 ? styles.selected : ''} >
                             <Bank size={16} color='#8047F8'  />
                             <span>DINHEIRO</span>
                         </button>
@@ -103,7 +103,7 @@ export function Checkout() {
                         </div>
                     </div>
 
-                    <Link className={styles.confirm} to='/success' state={{ "street": street, "bairro": bairro, "number": number  }}>CONFIRMAR PEDIDO</Link>
+                    <Link className={styles.confirm} to='/success' state={{ "street": street, "bairro": bairro, "number": number, "paymentMethod": paymentMethod  }}>CONFIRMAR PEDIDO</Link>
 
                 </div>
             </div>

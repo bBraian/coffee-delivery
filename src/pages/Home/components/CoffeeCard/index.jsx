@@ -28,7 +28,7 @@ export function CoffeeCard({data}) {
             <span className={styles.description}>{data.description}</span>
 
             <div className={styles.cartRow}>
-                <span>R$ <b>{data.price}</b></span>
+                <span>R$ <b>{data.price.replace('.', ',')}</b></span>
                 <div className={styles.cartButtons}>
                     <CounterButton height='2.375rem' amount={coffeeAmount} setCoffeeAmount={setCoffeeAmount} />
                     <button className={styles.cartButton} onClick={() => handleAddToCart(data)}>
