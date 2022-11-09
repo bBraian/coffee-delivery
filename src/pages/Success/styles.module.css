@@ -2,13 +2,23 @@
     .container {
         padding: 0 8rem !important;
     }
+
+    .row {
+        flex-direction: column;
+        gap: 4rem !important;
+    }
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 0 1.6rem !important;
         padding-bottom: 2rem !important;
-        margin-top: 8rem !important;
+        margin-top: 6.5rem !important;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 2rem !important;
     }
 
 }
