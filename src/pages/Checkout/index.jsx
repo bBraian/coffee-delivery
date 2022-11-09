@@ -23,7 +23,6 @@ export function Checkout() {
     const navigate = useNavigate();
 
     function handleConfirmCart(event) {
-        console.log('ok')
         event.preventDefault();
         if(paymentMethod === 0) {
             alert('Selecione uma forma de pagamento!');
@@ -35,6 +34,9 @@ export function Checkout() {
     }
 
     useEffect(() => {
+        if(cart.length === 0) { 
+            navigate('/');
+        }
         window.scrollTo(0, 0);
         let sum = 0;
         cart.forEach(coffee => {

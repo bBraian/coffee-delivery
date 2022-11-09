@@ -15,9 +15,9 @@ export function CounterButton(props) {
 
     return (
         <div className={styles.counter} style={{height: props.height}}>
-            <button className={styles.minus}><Minus size={14} weight='bold' onClick={handleMinusCoffee} /></button>
+            <a className={styles.minus}><Minus size={14} weight='bold' onClick={handleMinusCoffee} /></a>
             <div className={styles.counterValue}>{props.amount}</div>
-            <button className={styles.plus}><Plus size={14} weight='bold' onClick={handleAddCoffee} /></button>
+            <a className={styles.plus}><Plus size={14} weight='bold' onClick={handleAddCoffee} /></a>
         </div>
     )
 }

@@ -13,7 +13,7 @@ export function Router() {
         <Routes>
             <Route path='/' element={ <DefaultLayout /> }>
                 <Route path='/' element={ <Home /> } />
-                <Route path='/checkout' element={ cart.length > 0 ? <Checkout /> : <Home /> } />
+                <Route path='/checkout' element={<Checkout />} />
                 <Route path='/success' element={ canAcessSuccessPage ? <Succeess /> : <Home /> } />
             </Route>
         </Routes>
